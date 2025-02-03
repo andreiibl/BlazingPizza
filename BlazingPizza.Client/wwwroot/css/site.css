@@ -21,7 +21,8 @@ form {
 
 .top-bar {
     height: 5rem;
-    background-color: rgb(192,0,0);
+    /*Cambiar color barra*/
+    background-color: rgb(0,0,0);
     background-image: linear-gradient(rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.25) 25%, rgba(0,0,0,0) 70%);
     display: flex;
     align-items: stretch;
@@ -146,11 +147,12 @@ form {
     justify-content: center;
     padding-left: 0;
 }
-
+    /*Cambio el height y añado backgroud-position para que la foto este centrada*/
     .pizza-cards > li {
-        height: 10rem;
+        height: 20rem;
         position: relative;
         background-size: cover;
+        background-position: center;
         border-radius: 0.5rem;
         list-style-type: none;
         box-shadow: 0 3px 4px rgba(0,0,0,0.4);
@@ -184,7 +186,7 @@ form {
         font-family: 'Bahnschrift', Arial, Helvetica, sans-serif;
         text-transform: uppercase;
     }
-
+    /*Cambio el color para que concuerde*/
     .pizza-info .price {
         position: absolute;
         bottom: 0.5rem;
@@ -193,14 +195,14 @@ form {
         font-weight: 700;
         padding: 0rem 0.7rem;
         border-radius: 4px;
-        background-color: #08af08;
+        background-color: #dbbd1a;
         color: white;
         line-height: 2rem;
     }
-
-.price::before {
-    content: '£';
-    font-weight: 300;
+/* Cambio a euro y que se vea al final y en negrita */
+.price::after {
+    content: '€'; 
+    font-weight: bold;
     font-size: 1.2rem;
     margin-right: 0.2rem;
 }
@@ -228,9 +230,9 @@ form {
         font-family: 'Bahnschrift', Arial, Helvetica, sans-serif;
         text-transform: uppercase;
     }
-
+/*Cambio el color para que concuerde*/
 .order-total {
-    background-color: rgb(191, 52, 52);
+    background-color: rgb(0, 0, 0);
     height: 4rem;
     flex-shrink: 0;
     display: flex;
@@ -250,10 +252,10 @@ form {
         font-weight: 700;
         font-size: 1.5rem;
     }
-
-        .order-total .total-price::before {
-            content: '£';
-            font-weight: 300;
+        /* Cambio a euro y que se vea al final y en negrita */
+        .order-total .total-price::after {
+            content: '€';
+            font-weight: bold;
             margin: 0 0.1rem 0 0.4rem;
         }
 
@@ -307,10 +309,10 @@ form {
 .item-price {
     font-weight: 500;
 }
-
-    .item-price::before {
-        content: '£';
-        font-weight: 100;
+    /* Cambio a euro y que se vea al final y en negrita */
+    .item-price::after {
+        content: '€';
+        font-weight: bold;
         margin-right: 0.3rem;
     }
 
