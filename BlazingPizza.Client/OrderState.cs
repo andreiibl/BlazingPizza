@@ -14,7 +14,7 @@ public class OrderState
         {
             Special = special,
             SpecialId = special.Id,
-            Size = Pizza.DefaultSize,
+            Cooking = Pizza.CookingLevel.AlPunto,
             Toppings = new List<PizzaTopping>(),
         };
 

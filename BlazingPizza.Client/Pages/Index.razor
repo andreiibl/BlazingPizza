@@ -36,14 +36,14 @@
     }
     else
     {
-        <div class="empty-cart">Choose a pizza<br>to get started</div>
+        <div class="empty-cart">Seleccione una hamburguesa<br>para empezar</div>
     }
 
     <div class="order-total @(Order.Pizzas.Any() ? "" : "hidden")">
         Total:
         <span class="total-price">@Order.GetFormattedTotalPrice()</span>
         <a href="checkout" class="@(Order.Pizzas.Count == 0 ? "btn btn-warning disabled" : "btn btn-warning")">
-            Order >
+            Pedir >
         </a>
     </div>
 </div>
@@ -66,7 +66,7 @@
 
     async Task RemovePizza(Pizza configuredPizza)
     {
-        if (await JS.Confirm($"Remove {configuredPizza.Special?.Name} pizza from the order?"))
+        if (await JS.Confirm($"¿Desea eliminar {configuredPizza.Special?.Name} del pedido?"))
         {
             OrderState.RemoveConfiguredPizza(configuredPizza);
         }

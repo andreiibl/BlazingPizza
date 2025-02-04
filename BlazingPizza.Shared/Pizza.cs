@@ -7,9 +7,14 @@ namespace BlazingPizza;
 /// </summary>
 public class Pizza
 {
-    public const int DefaultSize = 12;
-    public const int MinimumSize = 9;
-    public const int MaximumSize = 17;
+    public enum CookingLevel
+    {
+        PocoHecha,       // Poco hecha
+        AlPunto, // Al punto
+        Hecha,     // Hecha
+        MuyHecha    // Muy hecha
+    }
+    public CookingLevel Cooking { get; set; } = CookingLevel.AlPunto; // Valor predeterminado
 
     public int Id { get; set; }
 
@@ -19,14 +24,12 @@ public class Pizza
 
     public int SpecialId { get; set; }
 
-    public int Size { get; set; }
-
     public List<PizzaTopping> Toppings { get; set; } = new();
 
     public decimal GetBasePrice()
     {
-        if(Special == null) throw new NullReferenceException($"{nameof(Special)} was null when calculating Base Price.");
-        return ((decimal)Size / (decimal)DefaultSize) * Special.BasePrice;
+        if (Special == null) throw new NullReferenceException($"{nameof(Special)} was null when calculating Base Price.");
+        return Special.BasePrice;
     }
 
     public decimal GetTotalPrice()

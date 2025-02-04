@@ -7,14 +7,16 @@
         </div>
         <form class="dialog-body">
             <div>
-                <label>Size:</label>
-                <input type="range" min="@Pizza.MinimumSize" max="@Pizza.MaximumSize" step="1" @bind="Pizza.Size" @bind:event="oninput" />
-                <span class="size-label">
-                    @(Pizza.Size)" (£@(Pizza.GetFormattedTotalPrice()))
-                </span>
+                <label>Punto de la carne:</label>
+                <select @bind="Pizza.Cooking">
+                    <option value="@Pizza.CookingLevel.PocoHecha">Poco hecha</option>
+                    <option value="@Pizza.CookingLevel.AlPunto">Al punto</option>
+                    <option value="@Pizza.CookingLevel.Hecha">Hecha</option>
+                    <option value="@Pizza.CookingLevel.MuyHecha">Muy hecha</option>
+                </select>
             </div>
             <div>
-                <label>Extra Toppings:</label>
+                <label>Complementos extras:</label>
                 @if (toppings is null)
                 {
                     <select class="custom-select" disabled>
@@ -23,7 +25,7 @@
                 }
                 else if (Pizza.Toppings.Count >= 6)
                 {
-                    <div>(maximum reached)</div>
+                    <div>(Limite alcanzado)</div>
                 }
                 else
                 {
@@ -31,11 +33,18 @@
                         <option value="-1" disabled selected>(select)</option>
                         @for (var i = 0; i < toppings.Count; i++)
                         {
-                            <option value="@i">@toppings[i].Name - (£@(toppings[i].GetFormattedPrice()))</option>
+                            <option value="@i">@toppings[i].Name - (@(toppings[i].GetFormattedPrice())€)</option>
                         }
                     </select>
                 }
             </div>
+
+            @if (Pizza.Toppings.Count > 0)
+            {
+                <div style="text-align: center; padding-left: 250px;">
+                    <button type="button" class="btn btn-danger" @onclick="RemoveAllToppings">Eliminar todos los extras</button>
+                </div>
+            }
 
             <div class="toppings">
                 @foreach (var topping in Pizza.Toppings)
@@ -53,11 +62,11 @@
         </form>
 
         <div class="dialog-buttons">
-            <button class="btn btn-secondary mr-auto" @onclick="OnCancel">Cancel</button>
+            <button class="btn btn-secondary mr-auto" @onclick="OnCancel">Cancelar</button>
             <span class="mr-center">
-                Price: <span class="price">@(Pizza.GetFormattedTotalPrice())</span>
+                Precio: <span class="price">@(Pizza.GetFormattedTotalPrice())</span>
             </span>
-            <button class="btn btn-success ml-auto" @onclick="OnConfirm">Order ></button>
+            <button class="btn btn-success ml-auto" @onclick="OnConfirm">Añadir ></button>
         </div>
 
 
@@ -93,5 +102,10 @@
     void RemoveTopping(Topping topping)
     {
         Pizza.Toppings.RemoveAll(pt => pt.Topping == topping);
+    }
+
+    void RemoveAllToppings()
+    {
+        Pizza.Toppings.Clear();
     }
 }
