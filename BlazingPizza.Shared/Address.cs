@@ -19,6 +19,7 @@ public class Address
     [Required, MaxLength(20)]
     public string Region { get; set; } = string.Empty;
 
-    [Required, MaxLength(20)]
+    [Required, MaxLength(5)]
+    [RegularExpression(@"^\d{5}$", ErrorMessage = "El código postal debe contener exactamente 5 dígitos.")]
     public string PostalCode { get; set; } = string.Empty;
 }

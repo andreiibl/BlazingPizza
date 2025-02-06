@@ -2,9 +2,9 @@
 {
     <p>
         <strong>
-            @(pizza.Cooking)"
+            @(pizza.Cooking) - 
             @pizza.Special?.Name
-            (£@pizza.GetFormattedTotalPrice())
+            (@pizza.GetFormattedTotalPrice()€)
         </strong>
     </p>
 
@@ -19,7 +19,7 @@
 <p>
     <strong>
         Precio total:
-        £@Order.GetFormattedTotalPrice()
+        @Order.GetFormattedTotalPrice()€
     </strong>
 </p>
 
