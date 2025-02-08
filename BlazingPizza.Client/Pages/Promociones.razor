@@ -1,0 +1,82 @@
+﻿@page "/promociones"
+@inherits LayoutComponentBase
+
+<div class="promotions-container">
+    <h1>Promociones Especiales</h1>
+    <div class="promotion-list">
+        <!-- Promoción 1 -->
+        <div class="promotion-item">
+            <img src="img/20pc.png" alt="Promoción 1" />
+            <div class="promotion-details">
+                <h2>Descuento del 20%</h2>
+                <p>Obtén un 20% de descuento en tu primer pedido.</p>
+                <a href="" class="btn btn-primary">¡Ordena Ahora!</a>
+            </div>
+        </div>
+
+        <!-- Promoción 2 -->
+        <div class="promotion-item">
+            <img src="img/2x1.png" alt="Promoción 2" />
+            <div class="promotion-details">
+                <h2>Compra 1 y lleva 2</h2>
+                <p>Compra una hamburguesa y llévate otra gratis. Solo por tiempo limitado.</p>
+                <a href="" class="btn btn-primary">¡Aprovecha la Oferta!</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .promotions-container {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .promotion-list {
+        display: flex; /* Usamos flexbox para alinear las promociones de izquierda a derecha */
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap; /* Esto hace que las cajas se envuelvan a la siguiente línea si es necesario */
+    }
+
+    .promotion-item {
+        background-color: #f9f9f9;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: left;
+        width: 360px; /* Ancho fijo para las promociones */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centra los elementos dentro de cada promoción */
+    }
+
+        .promotion-item img {
+            width: 360px; /* Asegura que la imagen tenga un tamaño fijo de 360px */
+            height: 260px;
+            border-radius: 8px;
+        }
+
+    .promotion-details h2 {
+        color: #333;
+        margin: 10px 0;
+    }
+
+    .promotion-details p {
+        color: #555;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        display: inline-block;
+        margin-top: 10px;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+</style>

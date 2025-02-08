@@ -457,9 +457,9 @@ form {
     font-size: 0.8rem;
 }
 
-.dialog .topping-price::before {
-    content: '£';
-}
+    .dialog .topping-price::before {
+        content: '€';
+    }
 
 .delete-topping {
     background: none;

@@ -1,16 +1,16 @@
 {
-  "short_name": "Blazing Pizza",
-  "name": "Blazing Pizza",
-  "icons": [
-    {
-      "src": "img/icon-512.png",
-      "type": "image/png",
-      "sizes": "512x512"
-    }
-  ],
-  "start_url": "/",
-  "background_color": "#860000",
-  "display": "standalone",
-  "scope": "/",
-  "theme_color": "#860000"
+    "short_name": "The Grill House", // Cambio el nombre y el icono
+    "name": "The Grill House",
+    "icons": [
+        {
+            "src": "img/logo1024.png",
+            "type": "image/png",
+            "sizes": "1024x1024"
+        }
+    ],
+    "start_url": "/",
+    "background_color": "#860000",
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "#860000"
 }
