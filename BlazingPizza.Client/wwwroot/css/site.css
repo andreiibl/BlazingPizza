@@ -386,8 +386,9 @@ form {
 }
 
 .dialog-title {
-    background-color: #444;
-    color: #fff2cc;
+    background-color: #ff3131;
+    color: #ffdf01;
+    font-weight: bold;
     padding: 1.3rem 2rem;
 }
 
